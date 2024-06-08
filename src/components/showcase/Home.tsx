@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '../general';
 
-import forhire from '../../assets/pictures/forHireGif.gif';
+// import forhire from '../../assets/pictures/forHireGif.gif';
 import { useNavigate } from 'react-router';
 
 export interface HomeProps {}
