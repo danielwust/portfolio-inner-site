@@ -80,7 +80,7 @@ const About: React.FC<AboutProps> = (props) => {
                     and I was absolutely ecstatic to be going to such a great
                     university. At the end of my sophomore year, I got an
                     internship working for the startup Hover, primarily focusing
-                    on frontend work. I continued to work at Hover on and off
+                    on backend work. I continued to work at Hover on and off
                     for about a year and a half, until the start of my senior
                     year when I decided to focus on other opportunities.
                 </p>
