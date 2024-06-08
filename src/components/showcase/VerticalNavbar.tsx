@@ -1,33 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router';
 import { Link } from '../general';
-// import forHire from '../../assets/pictures/forHireGif.gif';
-import { useLocation, useNavigate } from 'react-router';
 
 export interface VerticalNavbarProps {}
 
 const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
     const location = useLocation();
-    const [projectsExpanded, setProjectsExpanded] = useState(false);
-    const [isHome, setIsHome] = useState(false);
-
     const navigate = useNavigate();
+
+    const [projectsExpanded, setProjectsExpanded] = useState(false);
+    const [isHome, setIsHome] = useState(true);
+
+    useEffect(() => {
+        setProjectsExpanded(location.pathname.includes('/projects'));
+        setIsHome(location.pathname.includes('/home'));
+    }, [location.pathname]);
+
     const goToContact = () => {
         navigate('/contact');
     };
-
-    useEffect(() => {
-        if (location.pathname.includes('/projects')) {
-            setProjectsExpanded(true);
-        } else {
-            setProjectsExpanded(false);
-        }
-        if (location.pathname === '/') {
-            setIsHome(true);
-        } else {
-            setIsHome(false);
-        }
-        return () => {};
-    }, [location.pathname]);
 
     return !isHome ? (
         <div style={styles.navbar}>
@@ -37,7 +29,7 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
                 <h3 style={styles.headerShowcase}>Showcase '22</h3>
             </div>
             <div style={styles.links}>
-                <Link containerStyle={styles.link} to="" text="HOME" />
+                <Link containerStyle={styles.link} to="home" text="HOME" />
                 <Link containerStyle={styles.link} to="about" text="ABOUT" />
                 <Link
                     containerStyle={styles.link}
