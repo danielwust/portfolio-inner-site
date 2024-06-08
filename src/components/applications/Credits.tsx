@@ -7,8 +7,15 @@ export interface CreditsProps extends WindowAppProps {}
 
 const CREDITS = [
     {
-        title: 'Engineering & Design',
-        rows: [['Henry Heffernan', 'All']],
+        title: 'Content and Data',
+        rows: [['Daniel Wust', 'Partial']],
+    },
+    {
+        title: 'Design and Development',
+        rows: [
+            ['Henry Heffernan', 'All Design'],
+            ['Daniel Wust', 'Software Engineer'],
+        ],
     },
     {
         title: 'Modeling & Texturing',
@@ -31,7 +38,7 @@ const CREDITS = [
         rows: [
             ['Bruno Simon', 'SimonDev'],
             ['Lorelei Kravinsky', 'Scott Bass'],
-            ['Trey Briccetti', 'Mom, Dad & Angela'],
+            // ['Trey Briccetti', 'Mom, Dad & Angela'], ??
         ],
     },
     {
