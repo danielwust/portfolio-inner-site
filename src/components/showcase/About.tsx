@@ -16,18 +16,18 @@ const About: React.FC<AboutProps> = (props) => {
             <br />
             <div className="text-block">
                 <p>
-                    I'm a Software Engineer currently working at EasyPro Tech! In May
-                    of 2024 I'll be graduated in Anhanguera (Ampli).
+                    Software Engineer student currently working at EasyPro Tech!
+                    In December of 2025 I'll be graduated in Anhanguera (Ampli).
                 </p>
                 <br />
                 <p>
-                    Thank you for taking the time to check out my portfolio. I
-                    really hope you enjoy exploring it as much as I enjoyed
+                    Thank you for taking the time to check out my portfolio. 
+                    I really hope you enjoy exploring it as much as I enjoyed
                     building it. If you have any questions or comments, feel
                     free to contact me using{' '}
                     <Link to="/contact">this form</Link> or shoot me an email at{' '}
-                    <a href="mailto:danielwust99@gmail.com">
-                        danielwust99@gmail.com
+                    <a href="mailto:contato@danielwust.com">
+                        contato@danielwust.com
                     </a>
                 </p>
             </div>
@@ -148,8 +148,8 @@ const About: React.FC<AboutProps> = (props) => {
                     them. You can reach me through the{' '}
                     <Link to="/contact">contact page</Link> or shoot me an email
                     at{' '}
-                    <a href="mailto:danielwust99@gmail.com">
-                        danielwust99@gmail.com
+                    <a href="mailto:contato@danielwust.com">
+                        contato@danielwust.com
                     </a>
                 </p>
             </div>
