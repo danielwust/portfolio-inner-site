@@ -8,108 +8,16 @@ const Experience: React.FC<ExperienceProps> = (props) => {
         <div className="site-page-content">
             <ResumeDownload />
 
-            {/* Company 1 */}
-            <div style={styles.headerContainer}>
-                <div style={styles.header}>
-                    <div style={styles.headerRow}>
-                        <h1>ArteCola ❤️</h1>
-                        <a
-                            rel="noreferrer"
-                            target="_blank"
-                            href={'https://www.linkedin.com/company/artecolaquimica/'}
-                        >
-                            <h4>Linkedin</h4>
-                        </a>
-                    </div>
-                    <div style={styles.headerRow}>
-                        <h3>Administrative Assistant</h3>
-                        <b>
-                            <p>2014 - 1 Year</p>
-                        </b>
-                    </div>
-                </div>
-            </div>
-            <div className="text-block">
-                <p>
-                    Quoted by Arteflex and acting directly in the IT Team and Marketing of Artecola Companies, 
-                    providing the same services as a normal employer.
-                </p>
-                <br />
-                <ul>
-                    <li>
-                        <p>
-                            Technical Support and Maintenance
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            System Administration and Configuration
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Marketing Analysis and Management
-                        </p>
-                    </li>
-                </ul>
-            </div>
-
-            {/* Company 2 */}
-            <div style={styles.headerContainer}>
-                <div style={styles.header}>
-                    <div style={styles.headerRow}>
-                        <h1>MicroSales 💙</h1>
-                        <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href={'http://www.microsales.com.br'}
-                        >
-                            <h4>Official Website</h4>
-                        </a>
-                    </div>
-                    <div style={styles.headerRow}>
-                        <h3>FullStack Engineer</h3>
-                        <b>
-                            <p>2021 - Less than 1 Year</p>
-                        </b>
-                    </div>
-                </div>
-            </div>
-            <div className="text-block">
-                <p>
-                    Supervised and developed too many softwares and languages
-                </p>
-                <br />
-                <ul>
-                    <li>
-                        <p>
-                            Front End development projects and manutenance
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Back End development features
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Managed some projects almost alone
-                        </p>
-                    </li>
-                </ul>
-            </div>
-
             {/* Company 3 */}
             <div style={styles.headerContainer}>
                 <div style={styles.header}>
                     <div style={styles.headerRow}>
                         <h1>EasyPro Tech 💛</h1>
                         <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href={'https://www.easypro.com.br/'}
+                            target="_blank" rel="noreferrer"
+                            href={'https://www.easypro.com.br'}
                         >
-                            <h4>Official Website</h4>
+                            <h4>Show Website</h4>
                         </a>
                     </div>
                     <div style={styles.headerRow}>
@@ -152,6 +60,97 @@ const Experience: React.FC<ExperienceProps> = (props) => {
                             Collaboration with Team Members and Third Parties: <br/>
                             - “Collaborated on system integrations, ensuring efficient data exchange across platforms.”
                             - “Worked with Business Intelligence (BI) systems to provide valuable insights through dashboards and reports.”
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            {/* Company 2 */}
+            <div style={styles.headerContainer}>
+                <div style={styles.header}>
+                    <div style={styles.headerRow}>
+                        <h1>MicroSales 💙</h1>
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href={'http://www.microsales.com.br'}
+                        >
+                            <h4>Show Website</h4>
+                        </a>
+                    </div>
+                    <div style={styles.headerRow}>
+                        <h3>FullStack Developer</h3>
+                        <b>
+                            <p>2021 - Less than 1 Year</p>
+                        </b>
+                    </div>
+                </div>
+            </div>
+            <div className="text-block">
+                <p>
+                    Software Development and Project Management
+                </p>
+                <br />
+                <ul>
+                    <li>
+                        <p>
+                            Ensured seamless data flow and system reliability.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Successfully delivered and maintained front-end projects.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Independently directed and managed projects, demonstrating strong organizational skills.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            {/* Company 1 */}
+            <div style={styles.headerContainer}>
+                <div style={styles.header}>
+                    <div style={styles.headerRow}>
+                        <h1>ArteCola ❤️</h1>
+                        <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href={'https://www.linkedin.com/company/artecolaquimica/'}
+                        >
+                            <h4>Show Linkedin</h4>
+                        </a>
+                    </div>
+                    <div style={styles.headerRow}>
+                        <h3>Administrative Assistant</h3>
+                        <b>
+                            <p>2014 - 1 Year</p>
+                        </b>
+                    </div>
+                </div>
+            </div>
+            <div className="text-block">
+                <p>
+                    Quoted by Arteflex and acting directly in the IT Team and Marketing of Artecola Companies, 
+                    providing the same services as a normal employer.
+                </p>
+                <br />
+                <ul>
+                    <li>
+                        <p>
+                            Technical Support and Maintenance
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            System Administration and Configuration
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Marketing Analysis and Management
                         </p>
                     </li>
                 </ul>
