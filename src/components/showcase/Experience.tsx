@@ -1,12 +1,12 @@
 import React from 'react';
-import ResumeDownload from './ResumeDownload';
+// import ResumeDownload from './ResumeDownload';
 
 export interface ExperienceProps {}
 
 const Experience: React.FC<ExperienceProps> = (props) => {
     return (
         <div className="site-page-content">
-            <ResumeDownload />
+            {/* <ResumeDownload /> */}
 
             {/* Company 3 */}
             <div style={styles.headerContainer}>

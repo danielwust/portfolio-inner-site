@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ResumeDownload from './ResumeDownload';
+// import ResumeDownload from './ResumeDownload';
 import meNow from '../../assets/pictures/currentme.jpg';
 
 export interface AboutProps {}
@@ -66,7 +66,7 @@ const About: React.FC<AboutProps> = (props) => {
                 </p>
             </div>
 
-            <ResumeDownload />
+            {/* <ResumeDownload /> */}
 
             <br />
             <div className="text-block">

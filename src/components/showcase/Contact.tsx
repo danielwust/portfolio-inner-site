@@ -3,7 +3,7 @@ import colors from '../../constants/colors';
 import twitterIcon from '../../assets/pictures/contact-twitter.png';
 import ghIcon from '../../assets/pictures/contact-gh.png';
 import inIcon from '../../assets/pictures/contact-in.png';
-import ResumeDownload from './ResumeDownload';
+// import ResumeDownload from './ResumeDownload';
 
 export interface ContactProps {}
 
@@ -138,8 +138,8 @@ const Contact: React.FC<ContactProps> = (props) => {
                 <br />
                 <p>
                     <b>Email: </b>
-                    <a href="mailto:daniewust99@gmail.com">
-                        daniewust99@gmail.com
+                    <a href="mailto:contato@danielwust.com">
+                        contato@danielwust.com
                     </a>
                 </p>
 
@@ -245,7 +245,7 @@ const Contact: React.FC<ContactProps> = (props) => {
                     </div>
                 </div>
             </div>
-            <ResumeDownload altText="Need a copy of my Resume?" />
+            {/* <ResumeDownload altText="Need a copy of my Resume?" /> */}
         </div>
     );
 };
