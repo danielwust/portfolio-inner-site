@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-// import { useNavigate } from 'react-router';
+import React, { useEffect, useState } from 'react';
 import { Link } from '../general';
 
 export interface VerticalNavbarProps {}
@@ -9,11 +8,9 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const [projectsExpanded, setProjectsExpanded] = useState(false);
     const [isHome, setIsHome] = useState(true);
 
     useEffect(() => {
-        setProjectsExpanded(location.pathname.includes('/projects'));
         setIsHome(location.pathname.includes('/home'));
     }, [location.pathname]);
 
@@ -36,32 +33,6 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
                     to="experience"
                     text="EXPERIENCE"
                 />
-                <Link
-                    containerStyle={Object.assign(
-                        {},
-                        styles.link,
-                        projectsExpanded && styles.expandedLink
-                    )}
-                    to="projects"
-                    text="PROJECTS"
-                />
-                {
-                    // if current path contains projects
-                    projectsExpanded && (
-                        <div style={styles.insetLinks}>
-                            <Link
-                                containerStyle={styles.insetLink}
-                                to="projects/software"
-                                text="SOFTWARE"
-                            />
-                            <Link
-                                containerStyle={styles.insetLink}
-                                to="projects/art"
-                                text="ART"
-                            />
-                        </div>
-                    )
-                }
                 <Link
                     containerStyle={styles.link}
                     to="contact"

@@ -75,6 +75,7 @@ const About: React.FC<AboutProps> = (props) => {
                     <br />
                     Dedicated and passionate in programming.
                     Software Engineer student currently working at EasyPro Tech!
+                    <br />
                     Currently, I'm seeking new challenges to further enhance my expertise in Software Engineering.
                 </p>
                 <br />
