@@ -242,6 +242,13 @@ const Desktop: React.FC<DesktopProps> = (props) => {
                     );
                 })}
             </div>
+
+            <div style={styles.shortcuts}>
+                <div style={{ position: 'relative', left: '70vw' }}>
+                    <img src="https://profile-counter.glitch.me/{DanielWust}/count.svg" alt="page view counter"></img>
+                </div>
+            </div>
+
             <Toolbar
                 windows={windows}
                 toggleMinimize={toggleMinimize}

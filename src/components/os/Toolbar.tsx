@@ -98,22 +98,46 @@ const Toolbar: React.FC<ToolbarProps> = ({
                         <div style={styles.verticalStartContainer}>
                             <p style={styles.verticalText}>DanielOS</p>
                         </div>
-                        <div style={styles.startWindowContent}>
-                            <div style={styles.startMenuSpace} />
-                            <div style={styles.startMenuLine} />
-                            <div
-                                className="start-menu-option"
-                                style={styles.startMenuOption}
-                                onMouseDown={shutdown}
-                            >
-                                <Icon
-                                    style={styles.startMenuIcon}
-                                    icon="computerBig"
-                                />
-                                <p style={styles.startMenuText}>
-                                    Sh<u>u</u>t down...
-                                </p>
+
+                        <div style={{display: 'block', alignContent: 'end', width: '100%'}}>
+                            <div style={styles.startWindowContent}>
+                                <div style={styles.startMenuSpace} />
+                                <div style={styles.startMenuLine} />
+                                <div
+                                    className="start-menu-option"
+                                    style={styles.startMenuOption}
+                                    onMouseDown={shutdown}
+                                >
+                                    <Icon
+                                        style={styles.startMenuIcon}
+                                        icon="computerBig"
+                                    />
+                                    <p style={styles.startMenuText}>
+                                        Sh<u>u</u>t down...
+                                    </p>
+                                </div>
                             </div>
+
+{/* 
+                            <div style={styles.startWindowContent}>
+                                <div style={styles.startMenuSpace} />
+                                <div style={styles.startMenuLine} />
+                                <div
+                                    className="start-menu-option"
+                                    style={styles.startMenuOption}
+                                    onMouseDown={shutdown}
+                                >
+                                    <Icon
+                                        style={styles.startMenuIcon}
+                                        icon="computerBig"
+                                    />
+                                    <p style={styles.startMenuText}>
+                                        Sh<u>u</u>t down...
+                                    </p>
+                                </div>
+                            </div> 
+*/}
+
                         </div>
                     </div>
                 </div>
