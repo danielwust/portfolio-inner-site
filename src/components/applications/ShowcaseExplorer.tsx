@@ -28,7 +28,8 @@ const ShowcaseExplorer: React.FC<ShowcaseExplorerProps> = (props) => {
             minimizeWindow={props.onMinimize}
             bottomLeftText={'© Copyright 2024 Daniel Wust'}
         >
-        <MemoryRouter>
+        {/* Not works in deploy, but required in dev mode */}
+        {/* <MemoryRouter> */}
             <Router>
                 <div className="site-page">
 
@@ -53,7 +54,7 @@ const ShowcaseExplorer: React.FC<ShowcaseExplorerProps> = (props) => {
                     </div>
                 </Router>
 
-            </MemoryRouter>
+            {/* </MemoryRouter> */}
         </Window>
     );
 };
