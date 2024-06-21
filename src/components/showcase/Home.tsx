@@ -31,7 +31,7 @@ const Home: React.FC<HomeProps> = (props) => {
                     to="contact"
                     text="CONTACT"
                 />
-                <Link containerStyle={styles.link} to="/www.danielwust.com" text="SIMPLE VIEW" />
+                <Link containerStyle={styles.link} to="/simple.danielwust.com" text="SIMPLE VIEW" />
 
             </div>
             <div style={styles.forHireContainer} onMouseDown={goToContact}>
