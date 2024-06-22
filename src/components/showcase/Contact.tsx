@@ -48,29 +48,27 @@ const Contact: React.FC<ContactProps> = (props) => {
         }
     }, [email, name, message]);
 
+    const smtpUrl = 'https://utopian-foregoing-organ.glitch.me';
+
+    async function awakeSMTP() {
+        await fetch(smtpUrl, { method: 'GET' });        
+    }
+
     async function submitForm() {
         if (!isFormValid) {
             setFormMessage('Form unable to validate, please try again.');
             setFormMessageColor('red');
             return;
         }
+
+        await awakeSMTP();
+
         try {
             setIsLoading(true);
 
-            // to awake
-            await fetch(
-                'https://utopian-foregoing-organ.glitch.me',
-                {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                }
-            );
-
             // to send email body
-            const res = await fetch(
-                'https://utopian-foregoing-organ.glitch.me/send-email',
+            fetch(
+                smtpUrl + '/send-email',
                 {
                     method: 'POST',
                     headers: {
@@ -83,27 +81,24 @@ const Contact: React.FC<ContactProps> = (props) => {
                         message,
                     }),
                 }
-            );
-            // the response will be either {success: true} or {success: false, error: message}
-            const data = (await res.json()) as
-                | {
-                      success: false;
-                      error: string;
-                  }
-                | { success: true };
-            if (data.success) {
-                setFormMessage(`Message successfully sent. Thank you ${name}!`);
-                setCompany('');
-                setEmail('');
-                setName('');
-                setMessage('');
-                setFormMessageColor(colors.blue);
+            ).then(async (res) => {
+                const data = await res.json();
+
+                if (data && data.success) {
+                    setCompany('');
+                    setEmail('');
+                    setName('');
+                    setMessage('');
+
+                    setFormMessageColor(colors.blue);
+                    setFormMessage(`Message successfully sent. Thank you ${name}!`);
+                } else {
+                    setFormMessage(data.error);
+                    setFormMessageColor(colors.red);
+                }
+
                 setIsLoading(false);
-            } else {
-                setFormMessage(data.error);
-                setFormMessageColor(colors.red);
-                setIsLoading(false);
-            }
+            });
         } catch (e) {
             setFormMessage(
                 'There was an error sending your message. Please try again.'
