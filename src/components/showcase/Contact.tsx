@@ -114,7 +114,7 @@ const Contact: React.FC<ContactProps> = (props) => {
     }
 
     useEffect(() => {
-        if (formMessage.length > 0) {
+        if (formMessage && formMessage.length > 0) {
             setTimeout(() => {
                 setFormMessage('');
                 setFormMessageColor('');
