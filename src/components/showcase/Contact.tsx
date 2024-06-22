@@ -69,6 +69,7 @@ const Contact: React.FC<ContactProps> = (props) => {
                         name,
                         message,
                     }),
+                    credentials: 'omit'
                 }
             );
             // the response will be either {success: true} or {success: false, error: message}
