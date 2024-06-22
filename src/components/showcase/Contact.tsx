@@ -48,6 +48,23 @@ const Contact: React.FC<ContactProps> = (props) => {
         }
     }, [email, name, message]);
 
+    const smtpUrl = 'https://utopian-foregoing-organ.glitch.me';
+
+    async function awakeSMTP() {
+        // to awake
+        const teste = await fetch(
+            smtpUrl,
+            {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }
+        );
+
+        console.info('awake result', teste.body || teste);
+    }
+
     async function submitForm() {
         if (!isFormValid) {
             setFormMessage('Form unable to validate, please try again.');
@@ -57,16 +74,7 @@ const Contact: React.FC<ContactProps> = (props) => {
         try {
             setIsLoading(true);
 
-            // to awake
-            await fetch(
-                'https://utopian-foregoing-organ.glitch.me',
-                {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                }
-            );
+            await awakeSMTP();
 
             // to send email body
             const res = await fetch(
@@ -84,13 +92,9 @@ const Contact: React.FC<ContactProps> = (props) => {
                     }),
                 }
             );
+
             // the response will be either {success: true} or {success: false, error: message}
-            const data = (await res.json()) as
-                | {
-                      success: false;
-                      error: string;
-                  }
-                | { success: true };
+            const data = await res.json();
             if (data.success) {
                 setFormMessage(`Message successfully sent. Thank you ${name}!`);
                 setCompany('');
