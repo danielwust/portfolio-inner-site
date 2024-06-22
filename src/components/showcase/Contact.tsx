@@ -56,8 +56,21 @@ const Contact: React.FC<ContactProps> = (props) => {
         }
         try {
             setIsLoading(true);
+
+            // to awake
+            await fetch(
+                'https://utopian-foregoing-organ.glitch.me',
+                {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
+
+            // to send email body
             const res = await fetch(
-                'https://smtp.danielwust.com',
+                'https://utopian-foregoing-organ.glitch.me/send-email',
                 {
                     method: 'POST',
                     headers: {
