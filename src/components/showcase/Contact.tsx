@@ -78,11 +78,12 @@ const Contact: React.FC<ContactProps> = (props) => {
                 await awakeSMTP();
             }
 
+            const text = message;
             const subject = `DW - New Contact Form Received!`;
             const from = `${name} <${email}>, job@danielwust.com`;
 
             const body = JSON.stringify({
-                subject, from, message, // Worker Format
+                subject, from, text, // Worker Format
 
                 // company, email, name, message, // SMTP Format
 
