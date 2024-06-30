@@ -99,9 +99,17 @@ const Contact: React.FC<ContactProps> = (props) => {
                 }
             );
 
+            let data;
+
+            // trying parse the response data
             // the response will be either {success: true} or {success: false, error: message}
-            const data = await res.json();
-            if (data.success) {
+            try {                
+                data = await res.json() || {};
+            } catch {
+                data = {};
+            }
+
+            if (res.status === 200 || data.success) {
                 setFormMessage(`Message successfully sent. Thank you ${name}!`);
                 setCompany('');
                 setEmail('');
@@ -110,14 +118,12 @@ const Contact: React.FC<ContactProps> = (props) => {
                 setFormMessageColor(colors.blue);
                 setIsLoading(false);
             } else {
-                setFormMessage(data.error);
+                setFormMessage(data.error || 'SMTP Server is Offline');
                 setFormMessageColor(colors.red);
                 setIsLoading(false);
             }
         } catch (e) {
-            setFormMessage(
-                'There was an error sending your message. Please try again.'
-            );
+            setFormMessage('Error sending your message. Please try again or contact directly.');
             setFormMessageColor(colors.red);
             setIsLoading(false);
         }
