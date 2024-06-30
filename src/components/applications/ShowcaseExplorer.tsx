@@ -29,7 +29,7 @@ const ShowcaseExplorer: React.FC<ShowcaseExplorerProps> = (props) => {
             bottomLeftText={'© Copyright 2024 Daniel Wust'}
         >
         {/* Not works in deploy, but required in dev mode */}
-        <MemoryRouter>
+        {/* <MemoryRouter> */}
             <Router>
                 <div className="site-page">
 
@@ -54,7 +54,7 @@ const ShowcaseExplorer: React.FC<ShowcaseExplorerProps> = (props) => {
                     </div>
                 </Router>
 
-            </MemoryRouter>
+            {/* </MemoryRouter> */}
         </Window>
     );
 };
