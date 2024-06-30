@@ -51,7 +51,6 @@ const Contact: React.FC<ContactProps> = (props) => {
     const smtpUrl = 'https://postman.danielwust.com';
 
     async function awakeSMTP() {
-        // to awake
         const exec = await fetch(
             smtpUrl,
             {
@@ -78,18 +77,17 @@ const Contact: React.FC<ContactProps> = (props) => {
                 await awakeSMTP();
             }
 
-            const text = message;
+            const text = `Name: ${name}, Company: ${company}, Email: ${email}, Message: ${message}`;
             const subject = `DW - New Contact Form Received!`;
-            const from = `${name} <${email}>, job@danielwust.com`;
 
             const body = JSON.stringify({
-                subject, from, text, // Worker Format
+                subject, text, // Worker Format
 
                 // company, email, name, message, // SMTP Format
 
                 // Optional Worker Params
-                // recipient // hard coded without token
-                // token // for manual recipient with token
+                // to // hard coded without token
+                // token // for manual 'to' with token
             });
 
             // to send email body

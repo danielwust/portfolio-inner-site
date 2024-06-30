@@ -1,5 +1,5 @@
 import React from 'react';
-// import { MemoryRouter } from 'react-router';
+import { MemoryRouter } from 'react-router';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import Window from '../os/Window';
