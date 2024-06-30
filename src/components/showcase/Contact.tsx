@@ -48,11 +48,11 @@ const Contact: React.FC<ContactProps> = (props) => {
         }
     }, [email, name, message]);
 
-    const smtpUrl = 'https://utopian-foregoing-organ.glitch.me';
+    const smtpUrl = 'https://postman.danielwust.com';
 
     async function awakeSMTP() {
         // to awake
-        const teste = await fetch(
+        const exec = await fetch(
             smtpUrl,
             {
                 method: 'GET',
@@ -62,7 +62,7 @@ const Contact: React.FC<ContactProps> = (props) => {
             }
         );
 
-        console.info('awake result', teste.body || teste);
+        console.info('awake result', exec.body || exec);
     }
 
     async function submitForm() {
@@ -74,22 +74,29 @@ const Contact: React.FC<ContactProps> = (props) => {
         try {
             setIsLoading(true);
 
-            await awakeSMTP();
+            if (smtpUrl && smtpUrl.includes('glitch.me')) {
+                await awakeSMTP();
+            }
+
+            const subject = `DW - New Contact Form Received!`;
+            const from = `${name} <${email}>, job@danielwust.com`;
+
+            const body = JSON.stringify({
+                subject, from, message, // Worker Format
+
+                // company, email, name, message, // SMTP Format
+
+                // Optional Worker Params
+                // recipient // hard coded without token
+                // token // for manual recipient with token
+            });
 
             // to send email body
             const res = await fetch(
-                'https://utopian-foregoing-organ.glitch.me/send-email',
+                smtpUrl + '/send-email',
                 {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        company,
-                        email,
-                        name,
-                        message,
-                    }),
+                    method: 'POST', body,
+                    headers: { 'Content-Type': 'application/json', },
                 }
             );
 
